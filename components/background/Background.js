@@ -9,8 +9,8 @@ const Cell = (props) => {
 
   useFrame(() => {
     ref.current.rotation.x += 0.01
-    ref.current.rotation.y += 0.005
-    //   ref.current.position.x -= 0.05
+    ref.current.rotation.y += 0.01
+    // ref.current.position.x -= 0.05
   })
 
   return (
@@ -19,8 +19,8 @@ const Cell = (props) => {
       ref={ref}
       position={props.position}
     >
-      <torusGeometry args={[5, 3, 50, 40]} />
-      <meshStandardMaterial roughness={4} color={props.color} depthWrite />
+      <torusGeometry args={[5, 3, 50, 50]} />
+      <meshStandardMaterial roughness={1} color={props.color} depthFunc />
     </mesh>
   )
 }
@@ -29,7 +29,7 @@ const Background = () => {
   return (
     <Canvas camera={{ position: [0, 0, 20] }} shadowMap className={styles.canvas}>
       <directionalLight
-        intensity={1.6}
+        intensity={1}
         color="darkred"
         position={[10, 5, 10]}
         castShadow

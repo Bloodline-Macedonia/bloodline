@@ -1,7 +1,6 @@
 import Background from '../components/background/Background';
 import styles from '../styles/Home.module.css';
-import Head from "next/head";
-import Image from "next/image";
+import Link from "next/link";
 import Navigation from "../components/navigation/Navigation.js";
 import { useEffect, useRef } from 'react';
 
@@ -19,14 +18,14 @@ export default function Home() {
 					{/* <div className={styles.imageContainer}>
 					<img src='/Logo_2.png' />
 				</div> */}
-					<div className='row justify-content-center h-100'>
-						<div className='col-md-6'>
-							<h1>one drop from you, <br/> an ocean for someone in need. </h1>
-						</div>
-						<div className='col-md-6'>
-						</div>
-					</div>
+					<h1>one drop from you, <br /> an ocean for someone in need. </h1>
+					<Link href='/about'><a className='button'>Help us save lives &rarr;</a></Link>
 				</div>
+			</div>
+			<div className='footer'>
+				<div className='links'>
+				</div>
+				<p> With <span style={{color: 'red'}}>&hearts;</span> from Bloodline Team </p>
 			</div>
 
 		</div>

@@ -20,6 +20,7 @@
   min-height: 100vh;
   min-width: 100vw;
   position: absolute;
+  padding: 5% 10%;
   top:0;
   left:0;
   background: white;
@@ -129,29 +130,27 @@
 }
 
 .landingmessage {
-  background-color: rgba(255, 255, 255, 0.142);  
-  backdrop-filter: blur(5px);
-  -webkit-backdrop-filter: blur(5px);
-  z-index: 100;
+  z-index: 10;
   border-radius: 20px;
-  padding: 3em 0;
-  margin: 10%;
-  height: 100%;
-  mix-blend-mode: exclusion;
-  max-height: 100%;
-  max-width: 100vw;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  padding: 3em;
+  margin: 15%;
+  position: relative;
+  display: block;
+  background-color: rgba(255, 255, 255, 0);
 }
 
+
 .landingmessage h1 {
-  mix-blend-mode: screen;
-  text-shadow: #eaeaea 1px 1px;
+  z-index: 12;
+  color: white;
+  position: relative;
+  mix-blend-mode: difference;
 }
 
 .backgroundContainer {
   position: fixed;
+  left: 0;
+  top:0;
   width: 100%;
   height: 100vh;
 }

@@ -3,7 +3,7 @@ body {
   padding: 0;
   margin: 0;
   font-weight: 700;
-  font-family: 'Lato',-apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+  font-family: 'Lato', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
     Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
 }
 
@@ -19,11 +19,49 @@ a {
 }
 
 .noisy {
-/* From https://css.glass */
-background: rgba(255, 255, 255, 0.38);
-border-radius: 16px;
-box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-backdrop-filter: blur(8.1px);
--webkit-backdrop-filter: blur(8.1px);
-border: 1px solid rgba(255, 255, 255, 0.23);
+  /* From https://css.glass */
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.1px);
+  -webkit-backdrop-filter: blur(8.1px);
+  border: 1px solid rgba(255, 255, 255, 0.23);
+}
+
+.button {
+  /* From https://css.glass */
+  background: rgba(154, 0, 0, 0.8);
+  border-radius: 10px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(11.9px);
+  -webkit-backdrop-filter: blur(11.9px);
+  display: inline-block;
+  padding: .5em 1em;
+  margin-top: .5em;
+  font-size: 1.2rem;
+  font-weight: 300;
+  height: auto;
+  color: white;
+  white-space: nowrap;
+  z-index: 1100 !important;
+}
+
+.button:hover {
+  text-decoration: none;
+  color: white;
+}
+
+.footer {
+  display: block;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100vw;
+  height: auto;
+  text-align: center;
+}
+
+.footer p {
+  pointer-events: none;
+  font-weight: 400;
 }
