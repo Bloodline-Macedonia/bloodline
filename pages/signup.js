@@ -4,35 +4,42 @@ import Link from "next/link";
 import Navigation from "../components/navigation/Navigation.js";
 import { useEffect, useRef, useState } from 'react';
 import { useForm } from 'react-hook-form';
+import client from '../lib/sanityConfig/client';
 
 import { motion } from 'framer-motion';
 import { container, content } from '../lib/motion/variants';
 
 export default function Home() {
-	const [formData, setFormData] = useState()
+	const [name, setName] = useState('');
+	const [birthDate, setBirthDate] = useState('');
+	const [bloodType, setBloodType] = useState('');
+	const [phone, setPhone] = useState('');
+	const [email, setEmail] = useState('');
+
+
 	const [isSubmitting, setIsSubmitting] = useState(false)
 	const [hasSubmitted, setHasSubmitted] = useState(false)
 	const { register, handleSubmit, watch, formState: { errors } } = useForm()
-	const onSubmit = async data => {
+	const onSubmit = () => {
 		setIsSubmitting(true)
-		let response
-		setFormData(data)
-		try {
-			response = await fetch('/api/signup', {
-				method: 'POST',
-				body: JSON.stringify(data),
-				type: 'application/json'
-			})
-			setIsSubmitting(false)
-			setHasSubmitted(true)
-		} catch (err) {
-			setFormData(err)
-		}
+		client.create({
+			_type: 'user',
+			name,
+			birthDate,
+			bloodType,
+			email,
+			phone
+		}).then((res) => {
+			console.log(res);
+			setHasSubmitted(true);
+		}).catch((err) => {
+			console.log(err);
+		})
 	}
 
 	if (hasSubmitted)
 		return (
-			<motion.div className='form-box' style={{paddingTop: '25%'}} initial='initial' animate='enter' exit='exit' variants={container}>
+			<motion.div className='form-box' style={{ paddingTop: '25%' }} initial='initial' animate='enter' exit='exit' variants={container}>
 				<motion.h3 variants={content} style={{ textAlign: 'center' }}>Thank you for your submission! <br /> We&apos;ll get back to you as soon as possible.</motion.h3>
 				<motion.div variants={content} className='group row justify-content-center'>
 					<Link href='/'><a>Go back to the homepage &rarr;</a></Link>
@@ -53,19 +60,15 @@ export default function Home() {
 						<div className="col-md-7">
 							<motion.div variants={content} className="group">
 								<label>Full Name*</label>
-								{hasSubmitted && (
-									<input type='text' required value={formData.name} name='name' />
-								) || (
-										<input type='text' required name='name' />
-									)}
+								<input type='text' required name='name' value={name} onChange={e => setName(e.target.value)} />
 							</motion.div>
 							<motion.div variants={content} className="group">
 								<label>Birthdate*</label>
-								<input type='date' required max={dateString} />
+								<input type='date' name='birthDate' required max={dateString} value={birthDate} onChange={e => setBirthDate(e.target.value)} />
 							</motion.div>
 							<motion.div variants={content} className="group">
 								<label>Blood Type*</label>
-								<select>
+								<select name='bloodType' value={bloodType} onChange={e => setBloodType(e.target.value)}>
 									<option>A+</option>
 									<option>A-</option>
 									<option>B+</option>
@@ -79,11 +82,11 @@ export default function Home() {
 							</motion.div>
 							<motion.div variants={content} className="group">
 								<label>Phone Number*</label>
-								<input type='text' required />
+								<input name='phone' type='text' required value={phone} onChange={e => setPhone(e.target.value)} />
 							</motion.div>
 							<motion.div variants={content} className="group">
 								<label>Email*</label>
-								<input type='text' required />
+								<input name='email' type='text' required value={email} onChange={e => setEmail(e.target.value)} />
 							</motion.div>
 							<motion.div variants={content}>
 								{isSubmitting && (
