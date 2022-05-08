@@ -11,7 +11,7 @@ export default function Home() {
 		<div className='container'>
 			<div className={styles.main}>
 				<h1>Sign up for Bloodline</h1>
-				<form action="" method="POST" className="form-box" enctype="multipart/form-data">
+				<form action="" method="POST" className="form-box">
 					<div className="row justify-content-center">
 						<div className="col-md-7">
 							<div className="group">
