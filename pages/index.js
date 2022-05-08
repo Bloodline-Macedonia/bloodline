@@ -20,7 +20,7 @@ export default function Home() {
 					{/* <div className={styles.imageContainer}>
 					<img src='/Logo_2.png' />
 				</div> */}
-					<h1>One drop from you, <br /> an ocean for someone in need. </h1>
+					<h1>One <span style={{fontWeight: '600', color: 'darkred'}}>drop</span> from you, <br /> an <span style={{fontWeight: '600', color: '#0a7e8c'}}>ocean</span> for someone in need. </h1>
 					<Link href='/signup'><a className='button'>Help us save lives &rarr;</a></Link>
 				</motion.div>
 			</div>
