@@ -33,9 +33,16 @@ const Layout = ({ children }) => (
       <nav className='nav'>
         <ul>
           <li>
+            <Link href='/'>
+              <a>
+                Home
+              </a>
+            </Link>
+          </li>
+          <li>
             <Link href='/signup'>
               <a>
-                Sign Up
+                Sign up
               </a>
             </Link>
           </li>

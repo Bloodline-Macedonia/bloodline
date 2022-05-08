@@ -20,7 +20,7 @@ const Cell = (props) => {
       ref={ref}
       position={props.position}
     >
-      <torusGeometry args={[5, 3, 200, 50]} />
+      <torusGeometry args={[5, 3, 200, 200]} />
       <meshStandardMaterial roughness={1} color={props.color} depthFunc />
     </mesh>
   )
