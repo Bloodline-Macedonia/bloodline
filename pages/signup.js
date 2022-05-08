@@ -33,7 +33,7 @@ export default function Home() {
 	if (hasSubmitted)
 		return (
 			<motion.div className='form-box' style={{paddingTop: '25%'}} initial='initial' animate='enter' exit='exit' variants={container}>
-				<motion.h3 variants={content} style={{ textAlign: 'center' }}>Thank you for your submission! <br /> We'll get back to you as soon as possible.</motion.h3>
+				<motion.h3 variants={content} style={{ textAlign: 'center' }}>Thank you for your submission! <br /> We&apos;ll get back to you as soon as possible.</motion.h3>
 				<motion.div variants={content} className='group row justify-content-center'>
 					<Link href='/'><a>Go back to the homepage &rarr;</a></Link>
 

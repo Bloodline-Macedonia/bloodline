@@ -7,18 +7,20 @@ const config = {
 }
 const client = sanityClient(config)
 
-export default async function createComment(req, res) {
+export default async function signUp(req, res) {
   const { _id, name, email, comment} = JSON.parse(req.body)
   try {
     await client.create({
-      _type: 'comment',
+      _type: 'form',
       post: {
         _type: 'reference',
         _ref: _id,
       },
       name,
+      birthdate,
+      bloodType,
+      phone,
       email,
-      comment
     })
   } catch (err) {
     console.error(err)
