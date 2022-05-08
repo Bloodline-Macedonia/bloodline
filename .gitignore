@@ -6,7 +6,7 @@
 .pnp.js
 
 # sanity 
-/lib/bloodline-macedonia
+/bloodline-macedonia
 
 # testing
 /coverage
