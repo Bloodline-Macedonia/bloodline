@@ -9,6 +9,7 @@ export default function Home() {
 
 	return (
 		<div className='container'>
+			<Navigation />
 			<div className={styles.main}>
 				<div className={styles.backgroundContainer}>
 					<Background />
@@ -18,7 +19,7 @@ export default function Home() {
 					<img src='/Logo_2.png' />
 				</div> */}
 					<h1>one drop from you, <br /> an ocean for someone in need. </h1>
-					<Link href='/signup'><a className='button'>Help us save lives &rarr;</a></Link>
+					<Link href='/about'><a className='button'>Help us save lives &rarr;</a></Link>
 				</div>
 			</div>
 			<div className='footer'>

@@ -65,3 +65,116 @@ a {
   pointer-events: none;
   font-weight: 400;
 }
+
+.footer a {
+  text-decoration: underline;
+}
+
+a {
+  text-decoration: none;
+  font-weight: 600;
+}
+
+a:hover {
+  text-decoration: none;
+  color: #DA3237;
+}
+
+@media screen and (max-width: 768px) {
+  .button {
+    display: block;
+    text-align: center;
+  }
+}
+
+input[type="text"],
+input[type="password"],
+input[type="number"],
+input[type="email"],
+textarea,
+select {
+  background: rgba(255, 255, 255, 0.38);
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(8.1px);
+  -webkit-backdrop-filter: blur(8.1px);
+  border: 1px solid rgba(255, 255, 255, 0.23);
+  outline: none;
+  font-size: 1.3rem;
+  padding: .5em;
+  font-weight: 400;
+  width: 100%;
+  border-radius: 5px;
+  transition: all .25s ease-in-out;
+  margin: .1em 0;
+}
+
+input[type="text"].small,
+input[type="password"].small,
+input[type="number"].small,
+input[type="email"].small,
+textarea.small,
+select.small {
+  font-size: 1rem;
+}
+
+.group {
+  margin: 2em 0;
+}
+
+
+.group label {
+  top: .1em;
+  left: .2em;
+  position: relative;
+  color: #000;
+}
+
+input[type="text"]:focus~label {
+  color: #000;
+}
+
+.form-box {
+  position: relative;
+  width: 100%;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="number"]:focus,
+input[type="email"]:focus,
+textarea:focus,
+select:focus {
+
+}
+
+select[multiple] option:focus {
+  text-decoration: none;
+  background: black;
+}
+
+.navContainer {
+  z-index: 1000;
+}
+.navContainer .nav a::after {
+  display: block;
+  content: '';
+  width: 100%;
+  position: absolute;
+  bottom: -8px;
+  left: 0;
+  height: 2px;
+  background-color: black;
+  /* background: rgb(218, 50, 52); 
+  opacity: 0;
+  transition: .25s all; */
+}
+
+.navContainer a:hover {
+  text-decoration: none;
+}
+
+.navContainer a:hover::after {
+  bottom: -1px;
+  opacity: 1;
+}

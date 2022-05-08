@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Link from 'next/link';
 
 const Layout = ({ children }) => (
   <>
@@ -28,6 +29,20 @@ const Layout = ({ children }) => (
       <meta name="twitter:card" content="summary" />
       <meta property="og:image" content="https://i.postimg.cc/G2dtq6bP/logo.png" />
     </Head>
+    <div className='navContainer'>
+      <nav className='nav'>
+        <ul>
+          <li>
+            <Link href='/signup'>
+              <a>
+                Sign Up
+              </a>
+            </Link>
+          </li>
+        </ul>
+
+      </nav>
+    </div>
     {children}
   </>
 );

@@ -23,7 +23,7 @@
   padding: 5% 10%;
   top:0;
   left:0;
-  background: white;
+  background: transparent;
 }
 
 .footer {
@@ -136,15 +136,14 @@
   margin: 15%;
   position: relative;
   display: block;
-  background-color: rgba(255, 255, 255, 0);
+
 }
 
 
 .landingmessage h1 {
   z-index: 12;
-  color: white;
+  color: black;
   position: relative;
-  mix-blend-mode: difference;
 }
 
 .backgroundContainer {
@@ -164,3 +163,12 @@
 .imageContainer img {
   max-width: 350px ;
 }
+
+@media screen and (max-width: 768px) {
+  .landingmessage {
+    margin: 150px 5px;
+    padding: 1em;
+  }
+  
+}
+

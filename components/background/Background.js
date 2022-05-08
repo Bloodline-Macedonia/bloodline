@@ -1,6 +1,7 @@
 import styles from './Background.module.css'
 import { useRef } from 'react'
 import { Canvas, useFrame } from '@react-three/fiber'
+import { ShapeGeometry } from 'three'
 
 const Cell = (props) => {
 
@@ -19,7 +20,7 @@ const Cell = (props) => {
       ref={ref}
       position={props.position}
     >
-      <torusGeometry args={[5, 3, 50, 50]} />
+      <torusGeometry args={[5, 3, 200, 50]} />
       <meshStandardMaterial roughness={1} color={props.color} depthFunc />
     </mesh>
   )
