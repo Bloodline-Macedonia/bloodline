@@ -1,6 +1,6 @@
 import Head from 'next/head';
-import Link from 'next/link';
-
+import Link from './link'; // custom link component for active styles
+ 
 const Layout = ({ children }) => (
   <>
     <Head>
@@ -33,14 +33,14 @@ const Layout = ({ children }) => (
       <nav className='nav'>
         <ul>
           <li>
-            <Link href='/'>
+            <Link href='/' activeClassName='active'>
               <a>
                 Home
               </a>
             </Link>
           </li>
           <li>
-            <Link href='/signup'>
+            <Link href='/signup' activeClassName='active'>
               <a>
                 Sign up
               </a>

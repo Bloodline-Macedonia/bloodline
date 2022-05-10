@@ -198,7 +198,7 @@ select[multiple] option:focus {
   line-height: 50px;
   vertical-align: middle;
 }
-
+/* 
 .navContainer .nav ul li a:after {
   display: block;
   content: '';
@@ -210,7 +210,7 @@ select[multiple] option:focus {
   background-color: black;
   opacity: 0;
   transition: .25s all;
-}
+} */
 
 .navContainer a:hover {
   text-decoration: none;
@@ -219,6 +219,10 @@ select[multiple] option:focus {
 .navContainer a:hover:after {
   bottom: -1px;
   opacity: 1;
+}
+
+.navContainer a.active {
+  color: #DA3237;
 }
 
 
