@@ -1,6 +1,6 @@
 import sgMail from '@sendgrid/mail';
 
-sgMail.setApiKey(process.env.SENDGRID_API_KEY || "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");
+sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 export default async (req, res) => {
     const { name, birthDate, bloodType, phone, email } = req.body;
