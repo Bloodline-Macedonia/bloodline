@@ -5,8 +5,8 @@ sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 export default async (req, res) => {
     const { name, birthDate, bloodType, phone, email } = req.body;
     const msg = {
-        to: email, // Change to your recipient
-        from: 'bloodlinemacedonia@gmail.com', // Change to your verified sender
+        to: email,
+        from: 'bloodlinemacedonia@gmail.com',
         subject: 'Sign-up Confirmation',
         text: "Thank you for your sign-up, below is your submitted information: ...",
         html: `<ul>
@@ -30,8 +30,8 @@ export default async (req, res) => {
 
     try {
         await sgMail.send(msg);
-        res.json({ message: `Email has been sent.` })
+        res.json({ message: `Email has been sent to ${email}` })
     } catch (error) {
-        res.status(500).json({ error: "Couldn't send email." })
+        res.status(500).json({ "error": "Couldn't send mail." })
     }
 }

@@ -32,7 +32,7 @@ useGLTF.preload("/Cell.gltf");
 
 const Background = () => {
   return (
-    <Canvas camera={{ position: [100, 100, 20] }} shadowmap className={styles.canvas}>
+    <Canvas camera={{ position: [100, 100, 20] }} shadowmap="true" className={styles.canvas}>
       <directionalLight
         intensity={1}
         color="red"

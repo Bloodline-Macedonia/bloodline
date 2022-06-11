@@ -6,10 +6,11 @@ import Navigation from "../components/navigation/Navigation.js";
 import { useEffect, useRef } from 'react';
 
 import { container, content } from '../lib/motion/variants';
+import useTranslation from '../hooks/useTranslation';
 
 
 export default function Home() {
-
+	const { t, locale } = useTranslation();
 	return (
 		<motion.div initial='initial' animate='enter' exit='exit'>
 			<div className={styles.main}>

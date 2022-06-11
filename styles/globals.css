@@ -49,6 +49,8 @@ a {
   height: auto;
   color: white;
   white-space: nowrap;
+  margin-left: auto;
+  margin-right: auto;
   z-index: 1100 !important;
 }
 
@@ -151,14 +153,14 @@ input[type="text"]:focus~label {
   text-align: center;
 }
 
-input[type="text"]:focus,
+/* input[type="text"]:focus,
 input[type="password"]:focus,
 input[type="number"]:focus,
 input[type="email"]:focus,
 textarea:focus,
 select:focus {
 
-}
+} */
 
 select[multiple] option:focus {
   text-decoration: none;

@@ -5,6 +5,7 @@ import Router from 'next/router';
 import NProgress from 'nprogress';
 
 import { AnimatePresence } from 'framer-motion';
+import { LanguageProvider } from '../i18n/LanguageContext';
 
 
 NProgress.configure({ ease: 'ease-out', speed: 500 })
@@ -23,11 +24,13 @@ Router.events.on('routeChangeError', () => {
 
 function Bloodline({ Component, pageProps, router }) {
   return (
-    <Layout>
-      <AnimatePresence exitBeforeEnter>
-        <Component {...pageProps} key={router.route} />
-      </AnimatePresence>
-    </Layout>
+    <LanguageProvider>
+      <Layout>
+        <AnimatePresence exitBeforeEnter>
+          <Component {...pageProps} key={router.route} />
+        </AnimatePresence>
+      </Layout>
+    </LanguageProvider>
   )
 }
 
